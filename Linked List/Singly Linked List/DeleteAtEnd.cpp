@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-struct student{
+struct student
+{
     string studentName;
     string phoneNumber;
     float gpa; 
@@ -22,9 +23,11 @@ string name;
 
 
 
-int main(){
+int main()
+{
 
-do{
+do
+{
 		
 		cout<<"\n\n0.Exit";
 		cout<<"\n1.Insert at end";
@@ -34,20 +37,24 @@ do{
 		cout<<"\n\n\nEnter your choice: ";
 		cin>> opt;
 		
-		switch(opt){
+		switch(opt)
+		{
 			
-			case 1:{
+			case 1:
+			{
 				insert_end();
 				break;
 			}
 			
-			case 2:{
+			case 2:
+			{
 				
 				display();
 				break;
 			}
 			
-			case 3:{
+			case 3:
+			{
 				delete_end();
 				break;
 			}
@@ -59,7 +66,8 @@ do{
 	return 0;
 }
 
-void insert_end(){
+void insert_end()
+{
 	
 	student *current = new student;
 	
@@ -73,11 +81,14 @@ void insert_end(){
 	cin>>current->phoneNumber;
 	
 	
-	if(first == NULL){
+	if(first == NULL)
+	{
 		cout<<"\n\nEmpty linked list";
 		first = last = current;
 	}
-	else{	//if linked list is non empty
+	else
+	{	
+		//if linked list is non empty
 	
 		last->next = current; 
 		last = current; 
@@ -85,17 +96,21 @@ void insert_end(){
 	
 }
 
-void display(){
+void display()
+{
 	
 	student *p = first;
 	
-	if(first == NULL){
+	if(first == NULL)
+	{
 		cout<<"\n\nEmpty linked list";
 	}
 	
-	else{
+	else
+	{
 		
-		while(p != NULL){
+		while(p != NULL)
+		{
 			
 			cout<<"\nThe student name is: " << p->studentName<<endl;
 			cout<<"\nThe student gpa is: " << p->gpa<<endl;
@@ -108,13 +123,15 @@ void display(){
 	
 }
 
-void delete_end(){
+void delete_end()
+{
 	
 	
 	student *p = first;
 	student *p1 = first;
 	
-	while(p != NULL){
+	while(p != NULL)
+	{
 		p1 = p;
 		p = p->next;
 	}
